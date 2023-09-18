@@ -100,7 +100,7 @@ public class HbmWorldGen implements IWorldGenerator {
 		if(dimExplosivebubbleSpawn > 0 && rand.nextInt(dimExplosivebubbleSpawn) == 0){
 			DungeonToolbox.generateOre(world, rand, i, j, 4, 64, 20, 10, ModBlocks.gas_explosive, Blocks.AIR);
 		}
-		
+
 		//Depth ore
 		if(dimID == 0){
 			DepthDeposit.generateConditionOverworld(world, i, 0, 3, j, 5, 0.6D, ModBlocks.cluster_depth_iron, rand, 24);
@@ -315,6 +315,18 @@ public class HbmWorldGen implements IWorldGenerator {
 		}
 	}
 
+	private void generateOil(World world, Random rand, int i, int j, int dimID){
+		int dimOilFreq = parseInt(CompatibilityConfig.oilSpawn.get(dimID));
+		if(dimOilFreq > 0 && rand.nextInt(dimOilFreq) == 0){
+			int randPosX = i + rand.nextInt(16);
+			int randPosY = 5 + rand.nextInt(20);
+			int randPosZ = j + rand.nextInt(16);
+			int radiusBase = CompatibilityConfig.oilBubbleRadiusBase;
+			int radiusMax = CompatibilityConfig.oilBubbleRadiusMax;
+			OilBubble.spawnOil(world, randPosX, randPosY, randPosZ, radiusBase + rand.nextInt(radiusMax));
+		}
+	}
+
 	private void generateSellafieldPool(World world, Random rand, int i, int j, int dimID){
 		int dimRadFreq = parseInt(CompatibilityConfig.radfreq.get(dimID));
 		if (dimRadFreq > 0 && rand.nextInt(dimRadFreq) == 0) {
@@ -414,6 +426,7 @@ public class HbmWorldGen implements IWorldGenerator {
 				generateSellafieldPool(world, rand, i, j, dimID);
 			generateBedrockOil(world, rand, i, j, dimID);
 			generateBedrockOre(world, rand, i, j, dimID);
+			generateOil(world, rand, i, j, dimID);
 			
 			if (GeneralConfig.enableMines){
 				int dimMineFreq = parseInt(CompatibilityConfig.minefreq.get(dimID));
@@ -675,14 +688,14 @@ public class HbmWorldGen implements IWorldGenerator {
 
 			generateSellafieldBlocks(world, rand, i, j, dimID);
 		}
-		
-		if(rand.nextInt(25) == 0) {
+		//old oil generation
+		/*if(rand.nextInt(25) == 0) {
 			int randPosX = i + rand.nextInt(16);
 			int randPosY = rand.nextInt(25);
 			int randPosZ = j + rand.nextInt(16);
 
 			OilBubble.spawnOil(world, randPosX, randPosY, randPosZ, 7 + rand.nextInt(9));
-		}
+		} */
 
 		if (GeneralConfig.enableNITAN) {
 

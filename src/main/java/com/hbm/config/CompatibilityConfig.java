@@ -55,7 +55,11 @@ public class CompatibilityConfig {
 	public static HashMap endTixiteSpawn;
 
 	public static HashMap bedrockOilSpawn;
-	
+
+	public static HashMap oilSpawn;
+	public static int oilBubbleRadiusBase;
+	public static int oilBubbleRadiusMax;
+
 	public static HashMap radioStructure;
 	public static HashMap antennaStructure;
 	public static HashMap atomStructure;
@@ -153,6 +157,10 @@ public class CompatibilityConfig {
 		
 		bedrockOilSpawn = CommonConfig.createConfigHashMap(config, CATEGORY_DIMORE, "01.31_bedrockOilSpawnRate", "Spawn bedrock oil every nTH chunk - <dimID:amount> (Int:Int)", "Int", "Int", new String[]{ "0:200" }, ":");
 		
+		oilSpawn = CommonConfig.createConfigHashMap(config, CATEGORY_DIMORE, "01.32_oilSpawnRate", "Spawn oil every nTH chunk - <dimID:amount> (Int:Int)", "Int", "Int", new String[]{ "0:25" }, ":");
+		oilBubbleRadiusBase = CommonConfig.createConfigInt(config, CATEGORY_DIMORE, "01.33_oilBubbleRadiusBase", "Base radius of an oil bubble", 7);
+		oilBubbleRadiusMax = CommonConfig.createConfigInt(config, CATEGORY_DIMORE, "01.34_oilBubbleRadiusMax", "Max radius of an oil bubble", 9);
+
 		netherUraniumSpawn = CommonConfig.createConfigHashMap(config, CATEGORY_DIMORE, "02.N00_uraniumSpawnrate", "Amount of nether uranium per chunk - <dimID:amount> (Int:Int)", "Int", "Int", new String[]{ "-1:8" }, ":");
 		netherTungstenSpawn = CommonConfig.createConfigHashMap(config, CATEGORY_DIMORE, "02.N01_tungstenSpawnrate", "Amount of nether tungsten per chunk - <dimID:amount> (Int:Int)", "Int", "Int", new String[]{ "-1:10" }, ":");
 		netherSulfurSpawn = CommonConfig.createConfigHashMap(config, CATEGORY_DIMORE, "02.N02_sulfurSpawnrate", "Amount of nether sulfur per chunk - <dimID:amount> (Int:Int)", "Int", "Int", new String[]{ "-1:26" }, ":");
