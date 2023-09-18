@@ -104,7 +104,8 @@ public class FFUtils {
 					if(tank.getFluidAmount() > 0){
 						level = (int)(sizeY * (Math.log(tank.getFluidAmount()) / Math.log(tank.getCapacity())));
 					}
-				} else{
+				} 
+				else {
 					level = (int)(((double)tank.getFluidAmount() / (double)tank.getCapacity()) * sizeY);
 				}
 
@@ -114,8 +115,7 @@ public class FFUtils {
 	}
 
 	public static void drawLiquid(FluidStack fluid, int guiLeft, int guiTop, float zLevel, int sizeX, int sizeY, int offsetX, int offsetY){
-		if(fluid == null || fluid.getFluid() == null)
-			return;
+		if(fluid == null || fluid.getFluid() == null)return;
 		drawLiquid(fluid.getFluid(), guiLeft, guiTop, zLevel, sizeX, sizeY, offsetX, offsetY);
 	}
 
@@ -235,9 +235,18 @@ public class FFUtils {
 
 		if (FluidCombustionRecipes.hasFuelRecipe(fluid)) {
 			if(isKeyPressed){
-				String energy = Library.getShortNumber(FluidCombustionRecipes.getFlameEnergy(fluid) * 1000L);
+				String heat = Library.getShortNumber(FluidCombustionRecipes.getFlameHeat(fluid) * 1000L);
 				texts.add("§6["+I18n.format("trait.flammable")+"]");
-				texts.add(" "+I18n.format("trait.flammable.desc", energy));
+				texts.add(" "+I18n.format("trait.flammable.desc", heat));
+			}
+			hasInfo = true;
+		}
+
+		if (FluidCombustionRecipes.hasCombustionRecipe(fluid)) {
+			if(isKeyPressed){
+				String power = Library.getShortNumber(FluidCombustionRecipes.getFlameHE(fluid) * 1000L);
+				texts.add("§c["+I18n.format("trait.combustible")+"]");
+				texts.add(" "+I18n.format("trait.combustible.desc", power));
 			}
 			hasInfo = true;
 		}

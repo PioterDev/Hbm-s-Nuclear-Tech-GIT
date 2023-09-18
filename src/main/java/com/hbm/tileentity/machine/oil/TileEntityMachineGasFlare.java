@@ -64,7 +64,7 @@ public class TileEntityMachineGasFlare extends TileEntityMachineBase implements 
 		super(6);
 		tankType = ModForgeFluids.gas;
 		tank = new FluidTank(64000);
-		cacheEnergy = FluidCombustionRecipes.getFlameEnergy(ModForgeFluids.gas);
+		cacheEnergy = FluidCombustionRecipes.getFlameHeat(ModForgeFluids.gas);
 		needsUpdate = false;
 	}
 
@@ -143,7 +143,7 @@ public class TileEntityMachineGasFlare extends TileEntityMachineBase implements 
 				maxVent += maxVent * burn;
 				maxBurn += maxBurn * burn;
 
-				cacheEnergy = FluidCombustionRecipes.getFlameEnergy(tankType);
+				cacheEnergy = FluidCombustionRecipes.getFlameHeat(tankType);
 
 				if (doesBurn && cacheEnergy != 0) {
 					int eject = Math.min(maxBurn, tank.getFluidAmount());
@@ -197,7 +197,7 @@ public class TileEntityMachineGasFlare extends TileEntityMachineBase implements 
 		Item itemId = slotId.getItem();
 		if (itemId == ModItems.forge_fluid_identifier) {
 			Fluid fluid = ItemForgeFluidIdentifier.getType(slotId);
-			int energy = FluidCombustionRecipes.getFlameEnergy(fluid);
+			int energy = FluidCombustionRecipes.getFlameHeat(fluid);
 
 			if (tankType != fluid) {
 				tankType = fluid;

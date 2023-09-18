@@ -108,7 +108,7 @@ public class HeaterOilburner extends BlockDummyable implements ITooltipProvider,
         text.add(String.format("%,d", heater.heatEnergy) + " TU");
         text.add("§a-> §r" + heater.setting + " mB/t");
         Fluid type = heater.fluidType;
-        int energy = FluidCombustionRecipes.getFlameEnergy(type);
+        int energy = FluidCombustionRecipes.getFlameHeat(type);
         if (energy != 0) {
             int heat = energy * heater.setting;
             text.add("§c<- §r" + String.format("%,d", heat) + " TU/t");

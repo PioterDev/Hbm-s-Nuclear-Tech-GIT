@@ -10,9 +10,10 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 public class FluidCombustionRecipes {
 	
+	//These are for burning fluids for heat
 	public static HashMap<Fluid, Integer> resultingTU = new HashMap<Fluid, Integer>();
 	//for 1000 mb
-	public static void registerFluidCombustionRecipes() {
+	public static void registerFluidCombustionTURecipes() {
 		addBurnableFluid(ModForgeFluids.hydrogen, 5);
 		addBurnableFluid(ModForgeFluids.deuterium, 5);
 		addBurnableFluid(ModForgeFluids.tritium, 5);
@@ -27,6 +28,7 @@ public class FluidCombustionRecipes {
 		addBurnableFluid(ModForgeFluids.lubricant, 20);
 		addBurnableFluid(ModForgeFluids.aromatics, 25);
 		addBurnableFluid(ModForgeFluids.petroleum, 25);
+		addBurnableFluid(ModForgeFluids.lpg, 200);
 		addBurnableFluid(ModForgeFluids.biogas, 25);
 		addBurnableFluid(ModForgeFluids.bitumen, 35);
 		addBurnableFluid(ModForgeFluids.heavyoil, 50);
@@ -63,7 +65,7 @@ public class FluidCombustionRecipes {
 		
 	}
 
-	public static int getFlameEnergy(Fluid f){
+	public static int getFlameHeat(Fluid f){
 		Integer heat = resultingTU.get(f);
 		if(heat != null)
 			return heat;
@@ -78,19 +80,65 @@ public class FluidCombustionRecipes {
 		resultingTU.put(fluid, heatPerMiliBucket);
 	}
 
+	
 	public static void addBurnableFluid(String fluid, int heatPerMiliBucket){
 		if(FluidRegistry.isFluidRegistered(fluid)){
 			addBurnableFluid(FluidRegistry.getFluid(fluid), heatPerMiliBucket);
 		}
 	}
-
+	
 	public static void removeBurnableFluid(Fluid fluid){
 		resultingTU.remove(fluid);
 	}
-
+	
 	public static void removeBurnableFluid(String fluid){
 		if(FluidRegistry.isFluidRegistered(fluid)){
 			resultingTU.remove(FluidRegistry.getFluid(fluid));
+		}
+	}
+
+	//And these are for combusting fluids for HE
+	public static HashMap<Fluid, Integer> resultingHE = new HashMap<Fluid, Integer>();
+
+	public static void registerFluidCombustionHERecipes() {
+		addCombustibleFluid(ModForgeFluids.diesel, 500);
+		addCombustibleFluid(ModForgeFluids.petroil, 300);
+		addCombustibleFluid(ModForgeFluids.biofuel, 400);
+		addCombustibleFluid(ModForgeFluids.ethanol, 200);
+		addCombustibleFluid(ModForgeFluids.lpg, 750);
+
+		addCombustibleFluid(ModForgeFluids.nitan, 5_000);
+		addCombustibleFluid(ModForgeFluids.kerosene, 1_250);
+	}
+
+	public static int getFlameHE(Fluid f) {
+		Integer power = resultingHE.get(f);
+		if(power != null)
+			return power;
+		return 0;
+	}
+
+	public static boolean hasCombustionRecipe(Fluid fluid) {
+		return resultingHE.containsKey(fluid);
+	}
+
+	public static void addCombustibleFluid(Fluid fluid, int hePerMiliBucket) {
+		resultingHE.put(fluid, hePerMiliBucket);
+	}
+
+	public static void addCombustibleFluid(String fluid, int hePerMiliBucket) {
+		if(FluidRegistry.isFluidRegistered(fluid)){
+			addCombustibleFluid(FluidRegistry.getFluid(fluid), hePerMiliBucket);
+		}
+	}
+
+	public static void removeCombustibleFluid(Fluid fluid){
+		resultingHE.remove(fluid);
+	}
+
+	public static void removeCombustibleFluid(String fluid){
+		if(FluidRegistry.isFluidRegistered(fluid)){
+			resultingHE.remove(FluidRegistry.getFluid(fluid));
 		}
 	}
 }

@@ -67,8 +67,9 @@ public class ModForgeFluids {
 	public static Fluid lightoil = new Fluid("lightoil", new ResourceLocation(RefStrings.MODID, "blocks/forgefluid/lightoil_still"), new ResourceLocation(RefStrings.MODID, "blocks/forgefluid/lightoil_flowing"), null, Color.WHITE);
 	public static Fluid kerosene = new Fluid("kerosene", new ResourceLocation(RefStrings.MODID, "blocks/forgefluid/kerosene_still"), new ResourceLocation(RefStrings.MODID, "blocks/forgefluid/kerosene_flowing"), null, Color.WHITE);
 
-	public static Fluid gas = new Fluid("gas", new ResourceLocation(RefStrings.MODID, "blocks/forgefluid/gas_still"), new ResourceLocation(RefStrings.MODID, "blocks/forgefluid/gas_flowing"), null, Color.WHITE).setTemperature(111);
+	public static Fluid gas = new Fluid("gas", new ResourceLocation(RefStrings.MODID, "blocks/forgefluid/gas_still"), new ResourceLocation(RefStrings.MODID, "blocks/forgefluid/gas_flowing"), null, Color.WHITE).setTemperature(293);
 	public static Fluid petroleum = new Fluid("petroleum", new ResourceLocation(RefStrings.MODID, "blocks/forgefluid/petroleum_still"), new ResourceLocation(RefStrings.MODID, "blocks/forgefluid/petroleum_flowing"), null, Color.WHITE);
+	public static Fluid lpg = new Fluid("lpg", new ResourceLocation(RefStrings.MODID, "blocks/forgefluid/lpg_still"), new ResourceLocation(RefStrings.MODID, "blocks/forgefluid/lpg_flowing"), null, Color.WHITE).setTemperature(111);
 
 	public static Fluid aromatics = new Fluid("aromatics", new ResourceLocation(RefStrings.MODID, "blocks/forgefluid/aromatics_still"), new ResourceLocation(RefStrings.MODID, "blocks/forgefluid/aromatics_flowing"), null, Color.WHITE);
 	public static Fluid unsaturateds = new Fluid("unsaturateds", new ResourceLocation(RefStrings.MODID, "blocks/forgefluid/unsaturateds_still"), new ResourceLocation(RefStrings.MODID, "blocks/forgefluid/unsaturateds_flowing"), null, Color.WHITE);
@@ -197,6 +198,8 @@ public class ModForgeFluids {
 			gas = FluidRegistry.getFluid("gas");
 		if(!FluidRegistry.registerFluid(petroleum))
 			petroleum = FluidRegistry.getFluid("petroleum");
+		if(!FluidRegistry.registerFluid(lpg))
+			lpg = FluidRegistry.getFluid("lpg");
 
 		if(!FluidRegistry.registerFluid(aromatics))
 			aromatics = FluidRegistry.getFluid("aromatics");
@@ -363,6 +366,7 @@ public class ModForgeFluids {
 
 		gas = FluidRegistry.getFluid("gas");
 		petroleum = FluidRegistry.getFluid("petroleum");
+		lpg = FluidRegistry.getFluid("lpg");
 
 		aromatics = FluidRegistry.getFluid("aromatics");
 		unsaturateds = FluidRegistry.getFluid("unsaturateds");

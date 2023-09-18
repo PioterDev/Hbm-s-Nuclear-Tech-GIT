@@ -57,6 +57,8 @@ public class ChemplantRecipes {
 		
 		makeRecipe(EnumChemistryTemplate.FC_GAS_PETROLEUM, null, new FluidStack[]{ new FluidStack(ModForgeFluids.gas, 1800), new FluidStack(FluidRegistry.WATER, 1200) }, null, new FluidStack[]{ new FluidStack(ModForgeFluids.petroleum, 800) }, 100);
 		
+		makeRecipe(EnumChemistryTemplate.FR_LPG, null, new FluidStack[] { new FluidStack(ModForgeFluids.petroleum, 2000)}, null, new FluidStack[]{ new FluidStack(ModForgeFluids.lpg, 1000)}, 200);
+
 		makeRecipe(EnumChemistryTemplate.FC_DIESEL_KEROSENE, null, new FluidStack[]{ new FluidStack(ModForgeFluids.diesel, 1200), new FluidStack(ModForgeFluids.steam, 2000) }, null, new FluidStack[]{ new FluidStack(ModForgeFluids.kerosene, 400) }, 150);
 		
 		makeRecipe(EnumChemistryTemplate.FC_KEROSENE_PETROLEUM, null, new FluidStack[]{ new FluidStack(ModForgeFluids.kerosene, 1400), new FluidStack(ModForgeFluids.steam, 2000) }, null, new FluidStack[]{ new FluidStack(ModForgeFluids.petroleum, 800) }, 150);
@@ -107,7 +109,7 @@ public class ChemplantRecipes {
 		
 		makeRecipe(EnumChemistryTemplate.OIL_SAND, new AStack[] { new ComparableStack(ModBlocks.ore_oil_sand, 16), new OreDictStack(KEY_OIL_TAR, 1) }, null, new AStack[] { new ComparableStack(Blocks.SAND, 16) }, new FluidStack[]{ new FluidStack(ModForgeFluids.bitumen, 1000) }, 200);
 		
-		makeRecipe(EnumChemistryTemplate.ASPHALT, new AStack[] { new OreDictStack(KEY_GRAVEL, 2), new OreDictStack(KEY_SAND, 6) }, new FluidStack[]{ new FluidStack(ModForgeFluids.bitumen, 8000) }, new AStack[] { new ComparableStack(ModBlocks.asphalt, 16) }, null, 100);
+		makeRecipe(EnumChemistryTemplate.ASPHALT, new AStack[] { new OreDictStack(KEY_GRAVEL, 2), new OreDictStack(KEY_SAND, 6) }, new FluidStack[]{ new FluidStack(ModForgeFluids.bitumen, 1000) }, new AStack[] { new ComparableStack(ModBlocks.asphalt, 16) }, null, 100);
 		
 		makeRecipe(EnumChemistryTemplate.GNEISS_GAS, new AStack[] { new ComparableStack(ModBlocks.ore_gneiss_gas, 2) }, new FluidStack[]{ new FluidStack(ModForgeFluids.superhotsteam, 1000) }, new AStack[]{ new ComparableStack(ModBlocks.stone_gneiss, 2) }, new FluidStack[]{ new FluidStack(ModForgeFluids.gas, 1000), new FluidStack(ModForgeFluids.spentsteam, 1000) }, 100);
 		
@@ -159,7 +161,7 @@ public class ChemplantRecipes {
 		
 		makeRecipe(EnumChemistryTemplate.YELLOWCAKE, new AStack[] { new OreDictStack(U.dust(), 1), new OreDictStack(S.dust(), 2) }, new FluidStack[]{ new FluidStack(ModForgeFluids.acid, 500) }, new AStack[] { new ComparableStack(ModItems.powder_yellowcake, 1) }, null, 250);
 		
-		makeRecipe(EnumChemistryTemplate.UF6, new AStack[] { new ComparableStack(ModItems.powder_yellowcake, 1), new OreDictStack(F.dust(), 3) }, new FluidStack[]{ new FluidStack(FluidRegistry.WATER, 1000) }, null, new FluidStack[]{ new FluidStack(ModForgeFluids.uf6, 1000) }, 100);
+		makeRecipe(EnumChemistryTemplate.UF6, new AStack[] { new ComparableStack(ModItems.powder_yellowcake, 1), new OreDictStack(F.dust(), 3) }, new FluidStack[]{ new FluidStack(FluidRegistry.WATER, 1000) }, null, new FluidStack[]{ new FluidStack(ModForgeFluids.uf6, 1200) }, 100);
 		
 		makeRecipe(EnumChemistryTemplate.PUF6, new AStack[] { new OreDictStack(PU.dust(), 1), new OreDictStack(F.dust(), 3) }, new FluidStack[]{ new FluidStack(FluidRegistry.WATER, 1000) }, null, new FluidStack[]{ new FluidStack(ModForgeFluids.puf6, 1000) }, 150);
 		
@@ -243,6 +245,7 @@ public class ChemplantRecipes {
 		FC_BITUMEN,
 		FC_I_NAPHTHA,
 		FC_GAS_PETROLEUM,
+		FR_LPG,
 		FC_DIESEL_KEROSENE,
 		FC_KEROSENE_PETROLEUM,
 		CC_OIL,

@@ -60,7 +60,7 @@ public class TileEntityHeaterOilburner extends TileEntityMachineBase implements 
 
         tank = new FluidTank(16000);
         fluidType = ModForgeFluids.gas;
-        cacheHeat = FluidCombustionRecipes.getFlameEnergy(fluidType);
+        cacheHeat = FluidCombustionRecipes.getFlameHeat(fluidType);
     }
 
     @Override
@@ -119,12 +119,12 @@ public class TileEntityHeaterOilburner extends TileEntityMachineBase implements 
         Item itemId = slotId.getItem();
         if(itemId == ModItems.forge_fluid_identifier) {
             Fluid fluid = ItemForgeFluidIdentifier.getType(slotId);
-            int energy = FluidCombustionRecipes.getFlameEnergy(fluid);
+            int heat = FluidCombustionRecipes.getFlameHeat(fluid);
 
             if(fluidType != fluid) {
                 fluidType = fluid;
                 tank.setFluid(null);
-                cacheHeat = energy;
+                cacheHeat = heat;
 
                 this.markDirty();
             }

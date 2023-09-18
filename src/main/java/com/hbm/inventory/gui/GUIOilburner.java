@@ -38,7 +38,7 @@ public class GUIOilburner extends GuiInfoContainer {
 
         this.drawCustomInfoStat(mouseX, mouseY, guiLeft + 116, guiTop + 17, 16, 52, mouseX, mouseY, new String[]{String.format("%,d", Math.min(heater.heatEnergy, TileEntityHeaterOilburner.maxHeatEnergy)) + " / " + String.format("%,d", TileEntityHeaterOilburner.maxHeatEnergy) + " TU"});
 
-        int energy = FluidCombustionRecipes.getFlameEnergy(heater.fluidType);
+        int energy = FluidCombustionRecipes.getFlameHeat(heater.fluidType);
 
         if (energy != 0) {
             this.drawCustomInfoStat(mouseX, mouseY, guiLeft + 79, guiTop + 34, 18, 18, mouseX, mouseY, new String[]{heater.setting + " mB/t", String.format("%,d", energy * heater.setting) + " TU/t"});

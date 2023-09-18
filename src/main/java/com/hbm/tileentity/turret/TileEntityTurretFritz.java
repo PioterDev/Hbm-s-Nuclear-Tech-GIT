@@ -85,7 +85,7 @@ public class TileEntityTurretFritz extends TileEntityTurretBaseNT implements IFl
 		if(this.tank.getFluid() != null && FluidCombustionRecipes.hasFuelRecipe(tank.getFluid().getFluid()) && this.tank.getFluidAmount() >= drain) {
 			
 			BulletConfiguration conf = BulletConfigSyncingUtil.pullConfig(BulletConfigSyncingUtil.FLA_NORMAL);
-			this.spawnBullet(conf, FluidCombustionRecipes.getFlameEnergy(tank.getFluid().getFluid()) * 0.002F);
+			this.spawnBullet(conf, FluidCombustionRecipes.getFlameHeat(tank.getFluid().getFluid()) * 0.002F);
 			this.tank.drain(drain, true);
 			
 			Vec3 pos = new Vec3(this.getTurretPos());

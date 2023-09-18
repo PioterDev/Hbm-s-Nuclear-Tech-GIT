@@ -112,6 +112,7 @@ public class FluidTypeHandler {
 		
 		fluidProperties.put(ModForgeFluids.gas.getName(), new FluidProperties(1, 4, 1, EnumSymbol.NONE));
 		fluidProperties.put(ModForgeFluids.petroleum.getName(), new FluidProperties(1, 4, 1, EnumSymbol.NONE));
+		fluidProperties.put(ModForgeFluids.lpg.getName(), new FluidProperties(1, 3, 1, EnumSymbol.NONE));
 		
 		fluidProperties.put(ModForgeFluids.aromatics.getName(), new FluidProperties(1, 4, 1, EnumSymbol.NONE));
 		fluidProperties.put(ModForgeFluids.unsaturateds.getName(), new FluidProperties(1, 4, 1, EnumSymbol.NONE));
