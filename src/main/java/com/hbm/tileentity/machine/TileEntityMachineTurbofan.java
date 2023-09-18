@@ -36,6 +36,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.SoundCategory;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTank;
 import net.minecraftforge.fluids.FluidUtil;
@@ -56,6 +57,7 @@ public class TileEntityMachineTurbofan extends TileEntityLoadedBase implements I
 	public int soundCycle = 0;
 	public static final long maxPower = 1_000_000;
 	public FluidTank tank;
+	public Fluid tankType = ModForgeFluids.kerosene;
 	public int afterburner;
 	public boolean isRunning;
 	public float spin;
@@ -80,6 +82,7 @@ public class TileEntityMachineTurbofan extends TileEntityLoadedBase implements I
 			}
 		};
 		tank = new FluidTank(64000);
+		tankType = ModForgeFluids.kerosene;
 	}
 	
 	public String getInventoryName() {
