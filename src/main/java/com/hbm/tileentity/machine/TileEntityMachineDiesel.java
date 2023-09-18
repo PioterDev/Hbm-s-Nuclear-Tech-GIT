@@ -136,6 +136,8 @@ public class TileEntityMachineDiesel extends TileEntityMachineBase implements IT
 			return 300;
 		if(type == ModForgeFluids.biofuel)
 			return 400;
+		if(type == ModForgeFluids.lpg)
+			return 750;
 		if(type == ModForgeFluids.nitan)
 			return 5000;
 		return 0;
@@ -149,10 +151,10 @@ public class TileEntityMachineDiesel extends TileEntityMachineBase implements IT
 				}
 				soundCycle++;
 
-				if (soundCycle >= 5)
+				if (soundCycle > 2)
 					soundCycle = 0;
 
-				tank.drain(10, true);
+				tank.drain(1, true);
 				needsUpdate = true;
 				if (power + getHEFromFuel() <= powerCap) {
 					power += getHEFromFuel();
@@ -174,7 +176,11 @@ public class TileEntityMachineDiesel extends TileEntityMachineBase implements IT
 	private boolean isValidFluid(FluidStack stack) {
 		if(stack == null)
 			return false;
-		return stack.getFluid() == ModForgeFluids.diesel || stack.getFluid() == ModForgeFluids.nitan || stack.getFluid() == ModForgeFluids.petroil || stack.getFluid() == ModForgeFluids.biofuel;
+		return stack.getFluid() == ModForgeFluids.diesel || 
+		stack.getFluid() == ModForgeFluids.nitan || 
+		stack.getFluid() == ModForgeFluids.petroil || 
+		stack.getFluid() == ModForgeFluids.biofuel ||
+		stack.getFluid() == ModForgeFluids.lpg;
 	}
 
 	@Override

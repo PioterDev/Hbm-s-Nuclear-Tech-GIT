@@ -36,12 +36,13 @@ public class GUIMachineDiesel extends GuiInfoContainer {
 				"  Diesel (500 HE/t)",
 				"  Petroil (300 HE/t)",
 				"  Biofuel (400 HE/t)",
-				"  NITAN Superfuel (5000 HE/t)" };
+				"  LPG (750 HE/t)",
+				"  NITAN Superfuel (5 kHE/t)" };
 		this.drawCustomInfoStat(mouseX, mouseY, guiLeft - 16, guiTop + 36, 16, 16, guiLeft - 8, guiTop + 36 + 16, text);
 		
 		String[] text1 = new String[] { "Fuel consumption rate:",
-				"  10 mB/t",
-				"  200 mB/s",
+				"  1 mB/t",
+				"  20 mB/s",
 				"(Consumption rate is constant)" };
 		this.drawCustomInfoStat(mouseX, mouseY, guiLeft - 16, guiTop + 36 + 16, 16, 16, guiLeft - 8, guiTop + 36 + 16, text1);
 		

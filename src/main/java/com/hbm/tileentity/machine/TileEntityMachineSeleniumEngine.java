@@ -176,6 +176,8 @@ public class TileEntityMachineSeleniumEngine extends TileEntityLoadedBase implem
 			return 125;
 		if(tankType == ModForgeFluids.biofuel)
 			return 200;
+		if(tankType == ModForgeFluids.lpg)
+			return 375;
 		if(tankType == ModForgeFluids.nitan)
 			return 2500;
 		return 0;
@@ -219,7 +221,7 @@ public class TileEntityMachineSeleniumEngine extends TileEntityLoadedBase implem
 		if(stack == null || this.tank == null)
 			return false;
 		Fluid f = stack.getFluid();
-		return this.tank.getFluid() != null ? f == this.tank.getFluid().getFluid() :(f == ModForgeFluids.smear || f == ModForgeFluids.heatingoil || f == ModForgeFluids.diesel || f == ModForgeFluids.kerosene || f == ModForgeFluids.reclaimed || f == ModForgeFluids.petroil || f == ModForgeFluids.biofuel || f == ModForgeFluids.nitan);
+		return this.tank.getFluid() != null ? f == this.tank.getFluid().getFluid() :(f == ModForgeFluids.smear || f == ModForgeFluids.heatingoil || f == ModForgeFluids.diesel || f == ModForgeFluids.kerosene || f == ModForgeFluids.reclaimed || f == ModForgeFluids.petroil || f == ModForgeFluids.biofuel || f == ModForgeFluids.nitan || f == ModForgeFluids.lpg);
 	}
 
 	@Override
