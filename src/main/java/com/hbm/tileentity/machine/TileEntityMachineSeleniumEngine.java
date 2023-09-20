@@ -167,17 +167,17 @@ public class TileEntityMachineSeleniumEngine extends TileEntityLoadedBase implem
 		if(tankType == ModForgeFluids.heatingoil)
 			return 75;
 		if(tankType == ModForgeFluids.diesel)
-			return 225;
+			return 250;
 		if(tankType == ModForgeFluids.kerosene)
-			return 300;
+			return 125;
 		if(tankType == ModForgeFluids.reclaimed)
 			return 100;
 		if(tankType == ModForgeFluids.petroil)
-			return 125;
+			return 150;
 		if(tankType == ModForgeFluids.biofuel)
 			return 200;
 		if(tankType == ModForgeFluids.lpg)
-			return 375;
+			return 225;
 		if(tankType == ModForgeFluids.nitan)
 			return 2500;
 		return 0;
@@ -197,7 +197,7 @@ public class TileEntityMachineSeleniumEngine extends TileEntityLoadedBase implem
 				if (soundCycle >= 3)
 					soundCycle = 0;
 
-				tank.drain(this.pistonCount * 5, true);
+				tank.drain(this.pistonCount, true);
 				needsUpdate = true;
 
 				power += getHEFromFuel() * Math.pow(this.pistonCount, 1.15D);

@@ -35,11 +35,12 @@ public class GUIMachineSelenium extends GuiInfoContainer {
 		String[] text = new String[] { "Accepted Fuels:",
 				"  Industrial Oil (50 HE/t)",
 				"  Heating Oil (75 HE/t)",
-				"  Diesel (225 HE/t)",
-				"  Kerosene (300 HE/t)",
+				"  Diesel (250 HE/t)",
+				"  Kerosene (125 HE/t)",
 				"  Reclaimed Oil (100 HE/t)",
-				"  Petroil (125 HE/t)",
+				"  Petroil (150 HE/t)",
 				"  Biofuel (200 HE/t)",
+				"  LPG (225 HE/t)",
 				"  NITAN Superfuel (2500 HE/t)",
 				"(These numbers are base values,",
 				"actual output is based",
@@ -47,8 +48,8 @@ public class GUIMachineSelenium extends GuiInfoContainer {
 		this.drawCustomInfoStat(mouseX, mouseY, guiLeft - 16, guiTop + 36, 16, 16, guiLeft - 8, guiTop + 36 + 16, text);
 		
 		String[] text1 = new String[] { "Fuel consumption rate:",
-				"  5 mB/t",
-				"  100 mB/s",
+				"  1 mB/t",
+				"  20 mB/s",
 				"(Consumption rate per piston)" };
 		this.drawCustomInfoStat(mouseX, mouseY, guiLeft - 16, guiTop + 36 + 16, 16, 16, guiLeft - 8, guiTop + 36 + 16, text1);
 		
