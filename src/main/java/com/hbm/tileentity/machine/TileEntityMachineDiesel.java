@@ -137,7 +137,7 @@ public class TileEntityMachineDiesel extends TileEntityMachineBase implements IT
 		if(type == ModForgeFluids.biofuel)
 			return 400;
 		if(type == ModForgeFluids.lpg)
-			return 450;
+			return 750;
 		if(type == ModForgeFluids.nitan)
 			return 5000;
 		return 0;
